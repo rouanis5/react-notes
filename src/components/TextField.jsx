@@ -27,22 +27,23 @@ export const TextField = () => {
 
   const [text, setText] = useState("");
 
+  // update the text if the note id changed
   useEffect(() => {
-    setText(noteText);
+    if (id) setText(noteText); // check if isn't null
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  useEffect(() => {
-    dispatch({ type: ACTIONS.UPDATE_NOTE, payload: { id, text } });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [text]);
+  const updateText = (value) => {
+    setText(value);
+    dispatch({ type: ACTIONS.UPDATE_NOTE, payload: { id, text: value } });
+  };
 
   return (
     <div className="parent">
       {notes[0] && (
         <ReactMde
           value={text}
-          onChange={setText}
+          onChange={updateText}
           selectedTab={selectedTab}
           onTabChange={toggleSelectedTab}
           generateMarkdownPreview={(markdown) =>
