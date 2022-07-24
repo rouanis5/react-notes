@@ -14,8 +14,8 @@ const ACTIONS = {
 const initNote = () => {
   return {
     id: nanoid(),
-    title: "New note added",
-    text: "**New note added**",
+    title: "",
+    text: "# ",
     isCurrent: true,
   };
 };

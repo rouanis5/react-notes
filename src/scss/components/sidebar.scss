@@ -3,22 +3,29 @@
   background: var(--clr-bg-alt);
   min-height: 100vh;
   .head {
-    @include flex(space-between, center);
+    @include flex(space-between, center) {
+      flex-wrap: wrap;
+    }
+    .title {
+      margin-right: 0.67em;
+      margin-inline: 15px 0.67em;
+    }
     .icon {
       @include flex(center);
-      @include size(25px);
+      @include size(30px);
+      font-weight: $FW_BOLD;
+      font-size: 20px;
+      margin-block: 0.67em;
       color: var(--clr-white-);
       background: var(--clr-main-);
       user-select: none;
       border: none;
       cursor: pointer;
+      border-radius: $RADIUS;
       transition: background $FAST_DELAY;
       &:hover {
         background: var(--clr-main-alt);
       }
-      // & > * {
-      //   pointer-events: none;
-      // }
     }
   }
 }
@@ -29,17 +36,35 @@
 .note-delete-icon {
   width: 10%;
   cursor: pointer;
-  background: #222;
-  color: #fff;
+  // background: #222;
   @include size(30px);
   margin-left: 10px;
+
+  color: var(--clr-f-1);
+  transition: color $FAST_DELAY;
+
+  &:hover {
+    color: var(--clr-f-3);
+  }
+  &.active {
+    color: var(--clr-main-);
+    &:hover {
+      color: var(--clr-main-alt);
+    }
+  }
+  &.empty {
+    opacity: 0.5;
+  }
 }
+
 .note {
   padding: 18px 15px;
+  margin-bottom: 7px;
   width: 100%;
   font-weight: $FW_BOLD;
   cursor: pointer;
   user-select: none;
+  border-radius: $RADIUS;
   transition: background $FAST_DELAY;
   &:hover {
     background: var(--clr-white-alt);
@@ -50,5 +75,8 @@
     &:hover {
       background: var(--clr-main-alt);
     }
+  }
+  &.empty {
+    opacity: 0.5;
   }
 }
