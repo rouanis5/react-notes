@@ -1,0 +1,26 @@
+// $themes: ("light", "dark");
+
+$colors: (
+  main: (
+    // main colors
+    #{null}: hsl(300, 100%, 35%),
+    alt: hsl(300, 100%, 30%),
+  ),
+  white: (
+    // white colors
+    #{null}: #fff,
+    alt: #f2f2f2,
+  ),
+  bg: (
+    // background colors
+    #{null}: #f1f1f1,
+    alt: var(--clr-white-),
+  ),
+  f: (
+    // font colors
+    1: #333,
+    2: var(--clr-white-),
+  ),
+);
+
+@import "../helpers/color_generator.scss";

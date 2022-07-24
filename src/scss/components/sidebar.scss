@@ -1,0 +1,54 @@
+.aside {
+  padding-inline: 0;
+  background: var(--clr-bg-alt);
+  min-height: 100vh;
+  .head {
+    @include flex(space-between, center);
+    .icon {
+      @include flex(center);
+      @include size(25px);
+      color: var(--clr-white-);
+      background: var(--clr-main-);
+      user-select: none;
+      border: none;
+      cursor: pointer;
+      transition: background $FAST_DELAY;
+      &:hover {
+        background: var(--clr-main-alt);
+      }
+      // & > * {
+      //   pointer-events: none;
+      // }
+    }
+  }
+}
+
+.note-label {
+  @include flex(space-between, center);
+}
+.note-delete-icon {
+  width: 10%;
+  cursor: pointer;
+  background: #222;
+  color: #fff;
+  @include size(30px);
+  margin-left: 10px;
+}
+.note {
+  padding: 18px 15px;
+  width: 100%;
+  font-weight: $FW_BOLD;
+  cursor: pointer;
+  user-select: none;
+  transition: background $FAST_DELAY;
+  &:hover {
+    background: var(--clr-white-alt);
+  }
+  &.active {
+    background: var(--clr-main-);
+    color: var(--clr-f-2);
+    &:hover {
+      background: var(--clr-main-alt);
+    }
+  }
+}
