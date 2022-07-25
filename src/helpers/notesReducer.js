@@ -9,6 +9,7 @@ const ACTIONS = {
   SELECT_NOTE: "select note by id",
   DELETE_NOTE: "delete note by id",
   UPDATE_NOTE: "update note by id",
+  LOCAL_STORAGE_KEY: "react-notes-localStorage",
 };
 
 const initNote = () => {
